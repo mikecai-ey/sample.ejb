@@ -42,8 +42,10 @@ public class EJBServlet extends HttpServlet {
         PrintWriter writer = response.getWriter();
 
         // Call hello method on a stateless session bean
-        String message = statelessBean.hello();
+        String message = "<html><h1><font color=green>" + statelessBean.hello() + "</font></h1>\n"
+                        + "Powered by WebSphere Liberty <html>";
 
         writer.println(message);
+
     }
 }
